@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'iReportUI';
+  report :string | undefined;
+  onSubmit(): void{
+    this.report = "UPLOADED"
+  }
+
 }
