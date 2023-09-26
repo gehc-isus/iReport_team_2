@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.example.demo.dao.ReportDao;
+import com.example.demo.dto.ReportDto;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,12 +23,21 @@ public class Report {
     @Column(name = "uploaderId")
     private  Integer uploaderId;
 
+    @Column(name = "patient")
+    private  String patient;
 
     public Report(Long id, Date date, String reportData, Integer uploaderId) {
         this.id = id;
         this.date = date;
         this.reportData = reportData;
         this.uploaderId = uploaderId;
+    }
+
+    public Report(ReportDto reportDto){
+        this.date = new Date();
+        this.reportData = reportDto.getReportData();
+        this.uploaderId = reportDto.getUploaderId();
+        this.patient = reportDto.getPatient();
     }
 
     public Report() {
@@ -62,5 +73,9 @@ public class Report {
 
     public void setUploaderId(Integer uploaderId) {
         this.uploaderId = uploaderId;
+    }
+
+    public String getPatient() {
+        return patient;
     }
 }

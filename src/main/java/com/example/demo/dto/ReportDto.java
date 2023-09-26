@@ -17,10 +17,13 @@ public class ReportDto {
 
     private  final Integer uploaderId;
 
-    public ReportDto(Date date, String reportData, Integer uploaderId) {
+    private final String patient;
+
+    public ReportDto(Date date, String reportData, Integer uploaderId, String patient) {
         this.date = date;
         this.reportData = reportData;
         this.uploaderId = uploaderId;
+        this.patient = patient;
     }
 
     public Date getDate() {
@@ -33,5 +36,9 @@ public class ReportDto {
 
     public Integer getUploaderId() {
         return uploaderId;
+    }
+
+    public String getPatient() {
+        return patient;
     }
 }
