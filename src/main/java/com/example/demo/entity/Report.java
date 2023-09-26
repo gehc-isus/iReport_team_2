@@ -15,7 +15,7 @@ public class Report {
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "date")
+    @Column(name = "reportData")
     private String reportData;
 
     @Column(name = "uploaderId")
