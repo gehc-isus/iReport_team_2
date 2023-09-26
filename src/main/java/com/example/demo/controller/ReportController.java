@@ -1,19 +1,21 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.dto.ReportDto;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class ReportController {
 
 
-
-    private final AtomicLong counter = new AtomicLong();
-
-    @GetMapping("/greeting")
-    public String greeting() {
+    @GetMapping("/report")
+    public String getReport(@RequestParam(value = "name") String name) {
         return "ASD";
+    }
+
+    @PostMapping("/report")
+    public  void insertReport(@RequestBody ReportDto reportDto) {
+
     }
 }
