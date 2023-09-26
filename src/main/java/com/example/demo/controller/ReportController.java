@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -25,7 +26,7 @@ public class ReportController {
 
     @GetMapping("/report")
     public List<Report> getReport(@RequestParam(value = "patient") String patient) {
-        return reportDao.findAll();
+        return reportDao.findByPatient(patient);
     }
 
     @PostMapping("/report")
